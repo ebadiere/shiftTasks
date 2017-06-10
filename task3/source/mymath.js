@@ -1,4 +1,4 @@
-class MyMath{
+export class MyMath{
 
 	// add 2 numbers and return result
     add(a, b) {
