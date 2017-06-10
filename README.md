@@ -1,6 +1,6 @@
 Task 1.
 
-Used Java with maven because that's what I know right now.  I was going to use the SPring RestTemplate but found the RestAssured framework.  It was designed to test rest endpoints.  Ramping up on it was fairly easy, but what I like about it is the BDD descriptors of the tests.  The test results can be published from the CI system and made available to support for example.  It would illustrate how the endpoints are intented to be used.  Adding new tests is easy as well. 
+Used Java with maven because that's what I know right now.  I was going to use the Spring RestTemplate but found the RestAssured framework.  It was designed to test rest endpoints.  Ramping up on it was fairly easy, but what I like about it is the BDD descriptors of the tests.  The test results can be published from the CI system and made available to support for example.  It would illustrate how the endpoints are intented to be used.  Adding new tests is easy as well. 
 
 Task 2.
 
