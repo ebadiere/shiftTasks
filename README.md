@@ -4,10 +4,10 @@ Used Java with maven because that's what I know right now.  I was going to use t
 
 Task 2.
 
-This is not so trivial and not complete.  I found myself spending long iterations trying to implement simple steps in the website navigation.  I checked in what I have and plan to continue working on it, but set it aside for now to get another task done.  I used the Geb/Spock framework because I like the out of the box support for the Page Object pattern.  
+Updated.  There are now two test cases.  One to look for and test (in this case print) dynamic data from the shapeshift website.  The BTC price is compared to the price of BTC on coincap.  The price flucuates faster than the pages can load at times so any asserts would intermittently fail.
 
-What makes development on the UI painful IMMHO is the browser launch and asynchronous interaction with the browser, when looking for elements.  On the app side, adding IDs to elements would make finding them much faster allowing the test developer to focus on dealing with the timing issues.  I used Geb to try and get results quickly but I must say in a production implementation I would recommend straight selenium-webdriver driven by perhaps cucumber type of solution.  
-
+The second test is meant to run a BTC to ETH transaction.  It loads the two currencies and continues.  I would need test wallets to continue and validate.
+ 
 The chromedriver which is necessary to launch chrome on Mac OS and linux, was included by gradle in project which may slowdow the initial "git clone". Apologies, but at least you have it if you want to run what is there.
 
 Task 3.

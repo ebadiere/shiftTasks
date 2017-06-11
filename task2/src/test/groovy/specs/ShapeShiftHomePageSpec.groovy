@@ -1,40 +1,65 @@
 package specs
 
 import geb.spock.GebSpec
+import pages.CoinCapHomePage
 import pages.ShapeShiftHomePage
 import spock.lang.Stepwise
 
 @Stepwise
 class ShapeShiftHomePageSpec extends GebSpec {
 
-    def "can buy eth with btc"() {
+    def coinCapPrice
+    def shapeShiftPrice
+
+    // Confirm that the shapeshift site's values are really the same and coming from coincap.io
+    def "can compare the BTC price on CoinCap.io to the price on ShapeShift"(){
+        when:
+        to CoinCapHomePage
+            bitcoinLink.click()
+            coinCapPrice = price
+        to ShapeShiftHomePage
+            shapeShiftPrice = btcPrice
+        then:
+        println ("Compare, CoinCap: ${coinCapPrice}  ShapeShift Site: ${shapeShiftPrice}")
+        // Asserts can go in here.
+        // The price fluctuates faster than the browser can load the page so testing for exact match will sometimes fail,
+        // but the comparison of dynamic data can be made here.  The coincap value also needs to be rounded to four
+        // places after the decimal
+
+    }
+
+
+    def "can buy ETH with BTC"() {
         when:
         to ShapeShiftHomePage
 
-        //wait for page result to load and display continue button
         waitFor{continueBtn.displayed}
 
-        waitFor{deposit.displayed}
+        // bitcoin may already be displayed.
+        if (!bitcoinChooseAssetToTrade.displayed){
+            println ("Looking for bitcoin to select")
 
-        deposit.click()
+            deposit.click()
+            waitFor{bitcoin.displayed}
+            bitcoin.click()
+            waitFor{withdraw.displayed}
 
-        // bitcoin may already be displayed.  Must update to check first
-        waitFor{bitcoin.displayed}
+        }
 
-        bitcoin.click()
+        // ether may already be displayed.
+        if (!etherChooseAssetToTrade.displayed){
+            println ("Looking for ether to select")
 
-        waitFor{withdraw.displayed}
+            withdraw.click()
+            ether.click()
 
-        withdraw.click()
+        }
+        println("Enter test wallet addresses and continue processing transaction.")
 
-        waitFor{ether.displayed}
-        ether.click()
-
-        continueBtn.click()
-        nextAddress="0xe223767755677test"
-
-        then: 'End'
+        then:
         //asserts here
-
+        println("Validate with asserts here")
     }
+
+
 }

@@ -3,6 +3,7 @@
 
 	See: http://www.gebish.org/manual/current/configuration.html
 */
+
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
 import org.openqa.selenium.os.CommandLine
@@ -28,8 +29,8 @@ File findDriverExecutable() {
 }
 
 waiting {
-    timeout = 10
-    retryInterval = 0.5
+    timeout = 15
+    retryInterval = 1.0
     includeCauseInMessage = true
 }
 

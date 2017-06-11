@@ -67,6 +67,7 @@
       <artifactId>spock-core</artifactId>
       <version>RELEASE</version>
     </dependency>
+
   </dependencies>
   <build>
     <plugins>
