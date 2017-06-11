@@ -4,7 +4,7 @@ Used Java with maven because that's what I know right now.  I was going to use t
 
 Task 2.
 
-Updated.  There are now two test cases.  One to look for and test (in this case print) dynamic data from the shapeshift website.  The BTC price is compared to the price of BTC on coincap.  The price flucuates faster than the pages can load at times so any asserts would intermittently fail.
+Updated.  There are now two test cases.  One to look for and test (in this case print) dynamic data from the shapeshift website.  The BTC price is compared to the price of BTC on coincap.  The price fluctuates faster than the pages can load at times so any asserts would intermittently fail.
 
 The second test is meant to run a BTC to ETH transaction.  It loads the two currencies and continues.  I would need test wallets to continue and validate.
  
