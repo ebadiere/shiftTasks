@@ -29,7 +29,7 @@ File findDriverExecutable() {
 }
 
 waiting {
-    timeout = 15
+    timeout = 35
     retryInterval = 1.0
     includeCauseInMessage = true
 }

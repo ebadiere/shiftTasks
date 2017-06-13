@@ -1,0 +1,86 @@
+Started by user anonymous
+Building on master in workspace /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ebadiere/shiftTasks.git # timeout=10
+Fetching upstream changes from https://github.com/ebadiere/shiftTasks.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/ebadiere/shiftTasks.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/development^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/development^{commit} # timeout=10
+Checking out Revision 755e2b9bdd49c2cc849bccbaf2d0d257d9d04309 (refs/remotes/origin/development)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 755e2b9bdd49c2cc849bccbaf2d0d257d9d04309
+ > git rev-list 755e2b9bdd49c2cc849bccbaf2d0d257d9d04309 # timeout=10
+[workspace] $ /Users/Shared/Jenkins/Home/tools/hudson.tasks.Maven_MavenInstallation/maven/bin/mvn -f ./task1/pom.xml clean verify
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for shiftTasks:task1:jar:1.0-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: junit:junit:jar -> version 4.12 vs 3.8.1 @ line 35, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: junit:junit:jar -> duplicate declaration of version 4.12 @ line 46, column 17
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: junit:junit:jar -> duplicate declaration of version 4.12 @ line 52, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building task1 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ task1 ---
+[INFO] Deleting /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace/./task1/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ task1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace/./task1/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ task1 ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ task1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace/./task1/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ task1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 2 source files to /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace/./task1/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ task1 ---
+[INFO] Surefire report directory: /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace/./task1/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running shiftTasks.RateTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.521 sec
+Running shiftTasks.TransactionsListTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.91 sec
+
+Results :
+
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ task1 ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /Users/Shared/Jenkins/Home/jobs/ShapeShift Demo/workspace/./task1/target/task1-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 21.862 s
+[INFO] Finished at: 2017-06-12T22:06:15-06:00
+[INFO] Final Memory: 17M/204M
+[INFO] ------------------------------------------------------------------------
+[workspace] $ /bin/sh -xe /Users/Shared/Jenkins/tmp/jenkins2102002392287211597.sh
++ echo 'Running some awesome UI tests in a browser here'
+Running some awesome UI tests in a browser here
+[workspace] $ /bin/sh -xe /Users/Shared/Jenkins/tmp/jenkins2763379268556011689.sh
++ echo 'npm run tests here'
+npm run tests here
+[workspace] $ /bin/sh -xe /Users/Shared/Jenkins/tmp/jenkins2147049018704724431.sh
++ echo 'git merge to master'
+git merge to master
+Finished: SUCCESS
