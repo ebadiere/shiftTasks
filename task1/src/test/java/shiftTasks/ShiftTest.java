@@ -23,4 +23,18 @@ public class ShiftTest {
 
     }
 
+    @Test
+    public void testFailingPostBasedOnAPIExample(){
+        String examplePost = "{\"withdrawal\":\"AAAAAAAAAAAAA\", \"pair\":\"btc_ltc\", returnAddress:\"BBBBBBBBBBB\"}";
+
+        given()
+            .accept("application/json")
+            .contentType("application/json")
+            .body(examplePost)
+            .when().post("https://shapeshift.io/shift").then()
+            .statusCode(200).body("error", equalTo("Invalid or poorly formed JSON"));
+
+
+    }
+
 }
