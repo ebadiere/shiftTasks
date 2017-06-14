@@ -29,6 +29,24 @@ class ShapeShiftHomePageSpec extends GebSpec {
 
     }
 
+    // Confirm that the shapeshift site's values are really the same and coming from coincap.io
+    def "can compare the ETH price on CoinCap.io to the price on ShapeShift"(){
+        when:
+        to CoinCapHomePage
+        waitFor{ ethereumLink.displayed }
+        ethereumLink.click()
+        coinCapPrice = price
+        to ShapeShiftHomePage
+        shapeShiftPrice = ethPrice
+        then:
+        println ("Compare, CoinCap: ${coinCapPrice}  ShapeShift Site: ${shapeShiftPrice}")
+        // Asserts can go in here.
+        // The price fluctuates faster than the browser can load the page so testing for exact match will sometimes fail,
+        // but the comparison of dynamic data can be made here.  The coincap value also needs to be rounded to four
+        // places after the decimal
+
+    }
+
 
     def "can buy ETH with BTC"() {
         when:
