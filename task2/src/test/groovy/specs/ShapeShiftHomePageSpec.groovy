@@ -15,6 +15,7 @@ class ShapeShiftHomePageSpec extends GebSpec {
     def "can compare the BTC price on CoinCap.io to the price on ShapeShift"(){
         when:
         to CoinCapHomePage
+            waitFor{ bitcoinLink.displayed }
             bitcoinLink.click()
             coinCapPrice = price
         to ShapeShiftHomePage
