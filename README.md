@@ -8,7 +8,7 @@ Updated.  There are now two test cases.  One to look for and test (in this case 
 
 The second test is meant to run a BTC to ETH transaction.  It loads the two currencies and continues.  I would need test wallets to continue and validate.
  
-The chromedriver which is necessary to launch chrome on Mac OS and linux, was included by gradle in project which may slowdow the initial "git clone". Apologies, but at least you have it if you want to run what is there.
+The chromedriver binary which is necessary to launch chrome on Mac OS and linux, was included by gradle in project which may slowdow the initial "git clone". Apologies, but at least you have it if you want to run what is there.
 
 Task 3.
 
